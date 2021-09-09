@@ -1,0 +1,56 @@
+*{box-sizing: border-box;}
+.wrapper{width: 100%;overflow: hidden;position: relative;}
+.wrp1200{max-width: 1200px;margin: auto;padding: 0 20px;}
+
+.element{width: 350px;height: 220px;padding: 15px 10px 20px 10px;margin: 30px 0;
+border: 2px dashed red; background: green;}
+
+.section33 p{max-width:600px;overflow: hidden;text-align: justify;}
+.img31{float:left;margin: 0 20px 15px 0;}
+.img32{float:right;margin: 20px 0 20px 20px;}
+
+.box41{background: #0d5825;width: 500px;height: 450px;font-size: 23.9px;color:white;line-height: 1.5;text-align: center;position: relative;}
+.box41 p{margin: 0;}
+.box41 cite{font-size: 23px;}
+.blockquote41{padding: 30px 30px;margin: 0;}
+
+
+.img41{position: absolute;transition: all 0.5s;}
+.img41-1{bottom: 76px;right: 222px;transform:rotate(-25deg);}
+.img41-2{bottom: 80px;right: 174px;transform:rotate(-5deg);}
+.img41-3{bottom: 69px;right: 124px;transform:rotate(15deg);}
+.img41-1:hover{bottom:96px;}
+.img41-2:hover{bottom:100px;}
+.img41-3:hover{bottom:89px;}
+
+.box42{width: 200px;height: 230px;position: relative;}
+.box42-abs{width: 60px;height: 60px;position: absolute;}
+.pink42{background: #fd8888;top: 30px;left: 30px;z-index: 1;}
+.blue42{background: #7e8aeb;top: 60px;left: 60px;z-index: 3;}
+.green42{background: #4def99;top: 90px;left: 90px;z-index: 2;}
+
+.box43{background-color: rgb(71, 68, 68);width: 220px;padding: 40px 40px 140px 0px;position: relative;
+        font-family: serif;color:#fff;text-transform: uppercase;left: -200px;transition: left 0.75s;}
+.box43:hover{left: -20px;}
+.box43-right{position: absolute;padding-right: 10px;
+    top: 0;bottom: 0;right: 0;width: 30px;
+    writing-mode: vertical-rl;text-align: center;}
+.box43-left{text-align: left;}
+.box43-left ul{list-style: none;}
+.box43-left ul li{line-height: 2;}
+.box43-left a{text-decoration: none; color:#fff;transition: color 0.5s;}
+.box43-left a:hover{text-decoration: none; color:#fd8888;}
+
+.box43-left ul li:before{content:"";display: inline-block;width: 10px;height: 10px;
+    border:1px solid brown;background-color: coral;
+    transform:rotate(45deg);margin-right: 20px;}
+.box44{width: 400px;height: 366px;background: #f1f0f0;position: relative;}
+
+@keyframes move{
+    from, 
+    to {top: 10px;left: 10px;background: #ca1321;}
+    25% {top:246px;left:10px;background: #2a02e3;} 
+    50% {top: 246px;left:280px;background: #089305;}
+    75% {top: 10px;left:280px;background: #f9ff0c;}
+}
+.box44-animator{position: absolute;  width: 110px;height: 110px;animation: move  4s infinite ease-in-out;}

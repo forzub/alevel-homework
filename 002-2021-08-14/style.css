@@ -1,0 +1,28 @@
+.figure3{color:green;}
+.footer-wrp,.header-wrp,.section-wrp{max-width: 1200px;margin: 0 auto;}
+.section2 a[href^="https"]{color:red;}
+.holder>ul>li:last-child>a{color:indigo;}
+ul+p{font-size: 26px;}
+
+.section3 h3:first-child{color:pink;}
+.section3 #greycol{color:grey;}
+.section3 .section-wrp div>p{color:red;}
+.section3 div+div+h3+p{color:green;}
+.section3 .yellow{color:yellow; }
+
+.section4{padding: 50px 0;}
+.bg-box{
+  height: 450px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-image: 
+  url(img/grass-png-images-pictures-transparent-28.png),
+  url(img/lamp-png-0.png),
+  url(img/58eb07b830eab15b56162788.png), 
+  url(img/Ёжик.png), 
+  url(img/pole-zelen-trava-dom-derevya.jpg)  ;
+  background-position: bottom left,top, right, left, center;
+  background-repeat:  repeat-x,repeat-x,repeat-y,repeat-y,no-repeat;
+  background-size: 22%,3%,3%,3%,50%;
+  background-color: green;
+}
