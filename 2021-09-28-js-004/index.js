@@ -9,9 +9,17 @@ console.log(`1. Написать функцию bindFunc, которая при�
 и возвращать эту функцию с новым контекстом.
 Сам контекст, который мы хотим установить, находиться во втором аргументе`);
 
+let output_arr = [1,3,4,5,7,8,9,]
+
 function bindFunc(func,context,...arg){
-    return func.bind(context);
+    return func.call(context, arg);
 }
+
+    function print_arg(...args){
+        let printing_els = this.reduce((str, current) => '' + str + ' ' + current);
+        console.log(printing_els);
+    }
+bindFunc(print_arg, output_arr, output_arr);
 
 }
 
@@ -45,7 +53,7 @@ const objectA = {
         return console.log(response);
    }
 
-let contextsum = func.bind(objectA)();
+func.call(objectA);
 }
   
 // -----------------------------------------------------------------------
@@ -67,17 +75,10 @@ const valObject0 = {
     function getNewArray() {
         let response = 'Не найдено';
  
-        for(let key of Object.keys(this)){
-            if(key === 'values'){
-
-                response = this[key].map((curval)=>{
-                    if(typeof curval !== 'number') return;
-                    if((curval < 3) || (curval > 9)) return;
-                    if((curval % 2) === 0) return curval;
-                });
-                response = response.filter(y => y != undefined);
+            if('values' in this){
+                response = this['values'].filter((curval)=> (typeof curval === 'number') &&  (curval > 2) && (curval < 10) && ((curval % 2) === 0));
             }
-        }       
+               
         return response;
        };
 
@@ -94,6 +95,9 @@ console.log(sort_arr);
     let str2 = "";
 
     for(let i = 0; i < str.length; i++){
+        
+        if(round_brackets < 0){break;}
+
         if(str[i] === "("){ 
             round_brackets++;
             str1 += "(";
@@ -103,6 +107,7 @@ console.log(sort_arr);
             round_brackets--;
             str2 += ")";
         } 
+
     }
 
     console.log(`round_brackets = ${round_brackets}`);
