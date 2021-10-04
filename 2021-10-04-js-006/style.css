@@ -1,0 +1,30 @@
+*{box-sizing: border-box;margin: 0;padding: 0;}
+.wrapper{width: 100%;overflow: hidden;position: relative;display: flex;flex-direction: column;min-height: 100vh;}
+.wrp800{max-width: 800px;margin: auto;}
+h1,h2{margin: 0;padding: 0 0 20px 0;}
+p{padding-bottom: 10px;}
+
+body{font-family: sans-serif;}
+
+.main{display: flex;flex-grow: 1;text-align: center;flex-direction: column;}
+section{width: 100%;padding: 30px 0 0 0;margin-bottom: 50px;}
+section.multitab{border-bottom: 1px solid #aaa;padding-bottom: 30px;}
+.footer{background-color: #ccc;padding: 10px 0;}
+.footer h3{padding: 10px;}
+.footer-console{max-height: 120px;overflow-y: auto;min-height: 50px;border:1px solid #aaa;padding: 10px;}
+
+.multitab-inputblk{padding-bottom: 20px;}
+.multitab-tx{padding-bottom: 50px;}
+.table_multiply{margin: 0 auto;}
+.table_multiply tr:nth-child(even) td{background: #eee;}
+.table_multiply td{width: 40px;height: 40px; border: 1px solid #ccc;}
+.table_multiply td.hovered{background: red !important;}
+
+.table_multiply tr.click_selected td, .table_multiply td.click_selected{background: greenyellow !important;}
+
+.calk-container{display: flex;}
+.calk-box{padding: 20px;background-color: #eee;flex-grow: 1;width: 50%;}
+.calk-livestyle{border-left: 1px solid #aaa;}
+.calk input{margin-bottom: 20px;}
+.calk input[type="button"]{padding: 5px 15px;}
+.calk span{margin: 10px;display: block;padding: 5px 10px;text-align: center;border:1px solid #aaa;}

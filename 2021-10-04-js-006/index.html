@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://camo.githubusercontent.com/eb8b5f9caa4b4765b222e961729eadb775ac710b/68747470733a2f2f67617265766e612e6769746875622e696f2f6a732d73616d706c65732f696d616765732f612d6c6576656c2d69636f2e706e67" >
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>A-level HW JS 006</title>
+</head>
+<body> 
+    <div class="wrapper">
+        <main class="main">
+            <section class="multitab">
+                <div class="wrp800">
+                    <div class="multitab-content">
+                        <h2>Таблица умножения [1..9]</h2>
+                        <div class="multitab-inputblk">
+                            <label for="x_cells">ячеек по горизонтали</label>
+                            <input type="text" max="9" min="0" id="x_cells" onblur='set_input_number(this)' value="0">
+                            <label for="y_cells">ячеек по вертикали</label>
+                            <input type="text" max="9" min="0" id="y_cells" onblur='set_input_number(this)' value="0">
+                        </div>
+                        <div class="multitab-tx">
+                            <p>навести на клетку - выделить клетку</p>
+                            <p>клик по клетке - выделить строку и столбец</p>
+                        </div>
+                        <table class="table_multiply" id="table_multiply">
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section class="calk">
+                <div class="wrp800">
+                    <h2>Калькулятор</h2>
+                    <div class="calk-container">
+                        <div class="calk-box calk-simplystyle">
+                            <label for="calk-simplystyle-inA">введите слогаемое А</label>
+                            <input type="number" id="calk-simplystyle-inA">
+                            <label for="calk-simplystyle-inB">введите слогаемое B</label>
+                            <input type="number" id="calk-simplystyle-inB">
+                            <input type="button" value="Сумма" id="calk-sum-its"> 
+                            <span id="calk-simplystyle-result"></span>
+                        </div>
+                        <div class="calk-box calk-livestyle">
+                            <label for="calk-livestyle-inA">введите слогаемое А</label>
+                            <input type="number" id="calk-livestyle-inA">
+                            <label for="calk-livestyle-inB">введите слогаемое B</label>
+                            <input type="number" id="calk-livestyle-inB">
+                            <span id="calk-livestyle-result"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>   
+    
+        <footer class="footer">
+            <div class="wrp800">
+                <h3>console-loging:</h3>
+                <div id="footer-console" class="footer-console">
+
+                </div>
+            </div>    
+        </footer>   
+    </div>
+<script src="index.js"></script>
+</body>
+</html>
