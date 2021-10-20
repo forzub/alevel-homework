@@ -62,7 +62,7 @@ window.addEventListener('load',  () => {
 });
 
 //------------------------------------------------------------------------------------
-async function getMessages(id){
+/*async function getMessages(id){
 
     let beep = document.getElementById("beep");
     //let promise = jsonPost(global.gethttp(), {func: "getMessages", messageId: id});
@@ -95,6 +95,42 @@ async function getMessages(id){
             global.set_mess_count(result.nextMessageId);
         }
     }    
+}*/
+
+//------------------------------------------------------------------------------------
+function getMessages(id){
+
+    let beep = document.getElementById("beep");
+    //let promise = jsonPost(global.gethttp(), {func: "getMessages", messageId: id});
+    let promise = jsonPost_fetch(global.gethttp(), {func: "getMessages", messageId: id});
+    beep.classList.add("on");
+
+    
+    promise.then((result)=>result.json(),(error)=>console.error("Error is: ", error))
+    .then((result)=>{
+        beep.classList.remove("on");
+        global.set_mess_count(result.nextMessageId);
+
+        if(global.get_isStart()){
+            global.set_isStart(false);
+            global.set_mess_history_showed(0);
+
+            if(result.nextMessageId > global.get_steep_history_show()){
+                global.set_mess_history_showed( result.nextMessageId - global.get_steep_history_show() );
+                let show_mess_arr = result.data.slice(global.get_mess_history_showed());
+                // console.log(show_mess_arr);
+                show_chat(show_mess_arr);
+                checkLoop.start();            
+            } 
+        }else{
+            // console.log(result.data);
+            if(result.data.length > 0){
+                show_chat(result.data);
+                global.set_mess_count(result.nextMessageId);
+            }
+        }
+    });
+        
 }
 
 //------------------------------------------------------------------------------------
@@ -163,9 +199,11 @@ async function sendAndCheck(){
 function mycheckLoop(){
     let setinterval;
     return {
-        start : ()=>{setinterval = setInterval(()=>{
+        start : ()=>{
+            setinterval = setInterval(()=>{
             getMessages(global.get_mess_count());
-        },global.get_interval());},
+        },
+        global.get_interval());},
         stop: ()=>{clearTimeout(setinterval);}
     }    
 }
