@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-level HW JS 009</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <main class="main">
+            <div class="chat-window">
+                <div class="nickname-bx">
+                    <label for="nickname">Никнейм:</label>
+                    <input type="text" id="nickname" placeholder="Введите никнейм">
+                    <button onclick="set_nick();">Присвоить</button>
+                </div>
+                <div class="messagelist-bx">
+                    <div id="message-list" class="message-list">
+
+                    </div>
+                </div>
+                <div class="message-add">
+                    <span id="beep" class="beep"></span>
+                    <label for="message">Сообщение:</label>
+                    <input type="text" id="message" placeholder="Введите сообщение">
+                    <button onclick="sendAndCheck();">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>    
+    
+<script src="index.js"></script>
+</body>
+</html>
