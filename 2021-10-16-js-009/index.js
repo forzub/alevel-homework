@@ -106,7 +106,7 @@ function getMessages(id){
     beep.classList.add("on");
 
     
-    promise.then((result)=>result.json(),(error)=>console.error("Error is: ", error))
+    promise.then((result)=>result.json())
     .then((result)=>{
         beep.classList.remove("on");
         global.set_mess_count(result.nextMessageId);
@@ -129,7 +129,8 @@ function getMessages(id){
                 global.set_mess_count(result.nextMessageId);
             }
         }
-    });
+    })
+    .catch((error)=>console.error("Error is: ", error));
         
 }
 

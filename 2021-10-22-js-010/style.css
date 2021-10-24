@@ -1,0 +1,119 @@
+*{box-sizing: border-box;margin: 0;padding: 0;}
+.wrapper{width: 100%;overflow: hidden;position: relative;display: flex;flex-direction: column;min-height: 100vh;}
+.wrp800{max-width: 800px;margin: auto;}
+h1,h2{margin: 0;padding: 0 0 20px 0;}
+p{padding-bottom: 10px;}
+
+body{font-family: sans-serif;}
+.main{display: flex;flex-grow: 1;text-align: center;flex-direction: column;background: #444;}
+
+
+
+
+button#button{display: block; bottom: 27%;width: 50px;height: 50px;border-radius: 50%;right: 10%;
+background: grey; cursor: pointer;}
+button#button.active{background: green;}
+
+.button_second_tl{position: absolute;
+  top: 0;
+  right: 40px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;}
+
+  .button_second_tl p{color: #78797B;}  
+
+.row{height: 80vh;display: flex;}
+.col{flex: 1 0 33%;}
+
+.col.left, .col.center{padding-top: 7%;}
+.col.right { padding: 19.5% 0 0 0;position: relative;}
+
+.traffic_light{width: 50%; margin: 0 auto;}
+
+#main_trafic-red{display: none;}
+#main_trafic-yellow{display: none;}
+#main_trafic-green{display: none;}
+  #main_trafic-red.on{display: block;}
+  #main_trafic-yellow.on{display: block;}
+  #main_trafic-green.on{display: block;}
+
+
+#first_trafic-red{display: none;}
+#first_trafic-yellow{display: none;}
+#first_trafic-green{display: none;}
+  #first_trafic-red.on{display: block;}
+  #first_trafic-yellow.on{display: block;}
+  #first_trafic-green.on{display: block;}
+
+
+#trafic-green{display: none;}
+#trafic-red{display: none;}
+  #trafic-red.on{display: block;}
+  #trafic-green.on{display: block;}
+
+
+
+
+
+#pedestrian_traffic_light{width: 20%;margin: 0 auto;}
+
+#pedestrian_traffic_light .st0{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);stroke:#231F20;stroke-width:0.216;stroke-miterlimit:2.6131;}
+#pedestrian_traffic_light .st1{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_2_);}
+#pedestrian_traffic_light .st2{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_3_);}
+#pedestrian_traffic_light .st3{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_4_);stroke:#231F20;stroke-width:0.216;stroke-miterlimit:2.6131;}
+#pedestrian_traffic_light .st4{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_20_);} /*SVGID_5_*/
+#pedestrian_traffic_light .st5{fill-rule:evenodd;clip-rule:evenodd;fill:#000;}
+#pedestrian_traffic_light .st6{fill-rule:evenodd;clip-rule:evenodd;fill:url(#trafic-red_1_);}
+#pedestrian_traffic_light .st7{fill-rule:evenodd;clip-rule:evenodd;fill:url(#trafic-green_1_);}
+#pedestrian_traffic_light .st8{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_6_);stroke:#231F20;stroke-width:0.216;stroke-miterlimit:2.6131;}
+#pedestrian_traffic_light .st9{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_7_);stroke:#231F20;stroke-width:0.216;stroke-miterlimit:2.6131;}
+                    
+
+
+
+.traffic_light .st0{fill:url(#SVGID_1_);}
+.traffic_light .st1{fill:url(#SVGID_2_);}
+.traffic_light .st2{fill:url(#SVGID_3_);}
+.traffic_light .st3{fill:url(#SVGID_4_);}
+.traffic_light .st4{fill:url(#SVGID_5_);}
+.traffic_light .st5{fill:url(#SVGID_6_);}
+.traffic_light .st6{fill:url(#SVGID_7_);}
+.traffic_light .st7{fill:url(#SVGID_8_);}
+.traffic_light .st8{fill:url(#SVGID_9_);}
+.traffic_light .st9{fill:url(#SVGID_10_);}
+.traffic_light .st10{fill:url(#SVGID_11_);}
+.traffic_light .st11{fill:url(#SVGID_12_);}
+.traffic_light .st12{fill:url(#SVGID_13_);}
+.traffic_light .st13{fill:url(#SVGID_14_);}
+.traffic_light .st14{fill:url(#SVGID_15_);}
+.traffic_light .st15{fill:url(#SVGID_16_);}
+.traffic_light .st16{fill:#78797B;}
+.traffic_light .st17{fill:url(#SVGID_17_);}
+.traffic_light .st18{fill:url(#SVGID_18_);}
+.traffic_light .st19{fill:url(#SVGID_19_);}
+.traffic_light .st20{fill:url(#SVGID_20_);}
+.traffic_light .st21{fill:url(#SVGID_21_);}
+.traffic_light .st22{fill:#656565;}
+.traffic_light .st23{fill:url(#SVGID_22_);}
+.traffic_light .st24{fill:url(#SVGID_23_);}
+.traffic_light .st25{fill:#ED1C24;}
+.traffic_light .st26{fill:#FFCB05;}
+.traffic_light .st27{fill:#A6CE39;}
+.traffic_light .st28{fill:url(#SVGID_24_);}
+.traffic_light .st29{fill:url(#SVGID_25_);}
+.traffic_light .st30{fill:url(#SVGID_26_);}
+.traffic_light .st31{fill:url(#SVGID_27_);}
+.traffic_light .st32{opacity:0.4;}
+.traffic_light .st33{fill:url(#SVGID_28_);}
+.traffic_light .st34{opacity:0.6;}
+.traffic_light .st35{fill:url(#SVGID_29_);}
+.traffic_light .st36{fill:url(#SVGID_30_);}
+.traffic_light .st37{fill:url(#SVGID_31_);}
+.traffic_light .st38{fill:url(#SVGID_32_);}
+.traffic_light .st39{fill:url(#SVGID_33_);}
+.traffic_light .st40{fill:url(#SVGID_34_);}
+.traffic_light .st41{fill:url(#SVGID_35_);}
+
