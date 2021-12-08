@@ -52,7 +52,7 @@ class FilmsList extends Component {
                             <div className="mf_search_bx">
                                 <MyInput placeholder='enter a name to search' onChange={event => this.searchChange(event)} value={this.state.searchValue} />
                             </div>
-                            <div className="mf-sort-bx">
+                            <div className="mf_sort_bx">
                                 <MyButton className='btn service_btn' >Sort by name</MyButton>
                                 <MyButton className='btn service_btn' >Sort by year</MyButton>
                                 <MyButton className='btn service_btn' >Sort by duration</MyButton>
@@ -61,9 +61,17 @@ class FilmsList extends Component {
                         <div className="mf_list_bx">
                             <ul className="mf_list">
                                 {
-                                    (!!this.state.sortsfilms) ? 'films not found' : this.state.sortsfilms.map((el) => {
-                                        console.log('jhgjkhgh');
-                                    })
+                                    
+                                     (this.state.sortsfilms.length === 0) ? 'films not found' : this.state.sortsfilms.map((el) => {
+                                       return(
+                                       <li>
+                                            <span className='show_item show_name'><i>Title: </i>{el.name}</span>
+                                            <span className='show_item show_year'><i>Year: </i>{(el.premiered) ? el.premiered.slice(0,4) : 'unknown' }</span>
+                                            <span className='show_item show_duration'><i>Runtime: </i>{el.runtime} min</span>
+                                        </li>
+                                        );
+                                        //console.log('---->', el.name)
+                                     })
                                 }
                             </ul>
                         </div>
