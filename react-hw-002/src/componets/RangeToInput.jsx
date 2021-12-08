@@ -17,10 +17,10 @@ class RangeToInput extends Component{
                 <div className="ri_sect">
                     <div className="ri_wrp">
                         <div className="ri-range-bx">
-                            <MyInput type='range' min='0' max='100' step="1" onInput={ e => this.ChangeValue(e.target.value) } value={this.state.value} />
+                            <MyInput type='range' min='0' max='100' step="1" onChange={ e => this.ChangeValue(e.target.value) } onInput={ e => this.ChangeValue(e.target.value) }  value={this.state.value} />
                         </div>
                         <div className="ri-input-bx">
-                            <MyInput type='text' value={this.state.value} />
+                            <MyInput type='text' value={this.state.value} onChange={()=> null} />
                         </div>
                     </div>
                 </div>

@@ -33,5 +33,6 @@ code {
 
 .mf_list{list-style: none; width: 100%; margin: 0 auto;padding: 0;}
 .mf_list>li{display: flex;justify-content: space-between;border-bottom: 1px solid #ccc;}
-.show_item{flex:0 0 25%; text-align: left;padding: 5px 0;}
-.show_item i{margin-right: 25px;}
+.mf_list>li:first-child{border-bottom: 3px solid #ccc;}
+.show_item{flex:0 0 25%; text-align: center;padding: 5px 0;}
+.show_item:first-child{text-align: left;}

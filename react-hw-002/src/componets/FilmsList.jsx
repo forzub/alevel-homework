@@ -9,7 +9,7 @@ class FilmsList extends Component {
 
         this.state = {
             searchValue: '',
-            sortsfilms: [],    
+            sortsfilms: [],
         }
     }
 
@@ -18,9 +18,21 @@ class FilmsList extends Component {
     }
 
     searchChange = (event) => {
-        this.setState({ ...this.state, searchValue: event.target.value });
-
+        let arr = [];
+        arr = this.films.filter(itm => itm.name.includes(event.target.value));
+        this.setState({ ...this.state,  sortsfilms: [...arr], searchValue: event.target.value });
     }
+
+    sortByField = (field) => {
+        return (a, b) => a[field] > b[field] ? 1 : -1;
+      }
+    
+    clicSortBtn = (field) => {
+        let arrTmp = [...this.films];
+        arrTmp.sort(this.sortByField(field));
+        this.setState({ ...this.state, sortsfilms: [...arrTmp] });
+    }
+
 
     componentDidMount() {
         const url = 'http://api.tvmaze.com/shows';
@@ -31,17 +43,22 @@ class FilmsList extends Component {
             .then((data) => {
                 let arr = [];
                 let arrLen = 20;
-                
-                if(data.length < arrLen) {arrLen = data.length}
-                for(let i = 0; i < arrLen; i++){
-                    arr.push(data[i]);
+
+                if (data.length < arrLen) { arrLen = data.length }
+                for (let i = 0; i < arrLen; i++) {
+                    arr.push({ 
+                        name: data[i].name, 
+                        year: data[i].premiered.slice(0, 4), 
+                        runtime: data[i].runtime 
+                    });
                 }
-                this.setState({...this.state, sortsfilms: [...arr]});
+                this.setState({ ...this.state, sortsfilms: [...arr] });
                 this.films = [...arr];
 
-                console.log('>>>', this.state.sortsfilms);  
+                //console.log('>>>', this.state.sortsfilms);
             });
     }
+
 
     render() {
         return (
@@ -53,25 +70,38 @@ class FilmsList extends Component {
                                 <MyInput placeholder='enter a name to search' onChange={event => this.searchChange(event)} value={this.state.searchValue} />
                             </div>
                             <div className="mf_sort_bx">
-                                <MyButton className='btn service_btn' >Sort by name</MyButton>
-                                <MyButton className='btn service_btn' >Sort by year</MyButton>
-                                <MyButton className='btn service_btn' >Sort by duration</MyButton>
+                                <MyButton className='btn service_btn' onClick={()=>{ this.clicSortBtn('name') }} >Sort by name</MyButton>
+                                <MyButton className='btn service_btn' onClick={()=>{ this.clicSortBtn('year') }} >Sort by year</MyButton>
+                                <MyButton className='btn service_btn' onClick={()=>{ this.clicSortBtn('runtime') }} >Sort by runtime</MyButton>
                             </div>
                         </div>
                         <div className="mf_list_bx">
                             <ul className="mf_list">
                                 {
-                                    
-                                     (this.state.sortsfilms.length === 0) ? 'films not found' : this.state.sortsfilms.map((el) => {
-                                       return(
-                                       <li>
-                                            <span className='show_item show_name'><i>Title: </i>{el.name}</span>
-                                            <span className='show_item show_year'><i>Year: </i>{(el.premiered) ? el.premiered.slice(0,4) : 'unknown' }</span>
-                                            <span className='show_item show_duration'><i>Runtime: </i>{el.runtime} min</span>
-                                        </li>
-                                        );
-                                        //console.log('---->', el.name)
-                                     })
+
+                                    (this.state.sortsfilms.length) && (() => {
+                                        // console.log('>>>', this.state.sortsfilms.length);
+                                        return (
+                                            <li><span className='show_item show_name'>Title: </span>
+                                                <span className='show_item show_year'>Year: </span>
+                                                <span className='show_item show_runtime'>Runtime, min: </span></li>
+                                        )
+                                    })()
+                                }
+                                {
+                                    (this.state.sortsfilms.length === 0) ? 'films not found' :
+                                        this.state.sortsfilms.map((el, index) => {
+                                            // console.log('--->', this.state.sortsfilms.length);
+                                            return (
+                                                <li key={index}>
+                                                    <span className='show_item show_name'>{el.name}</span>
+                                                    <span className='show_item show_year'>{(el.year) ? el.year : 'unknown'}</span>
+                                                    <span className='show_item show_duration'>{el.runtime} </span>
+                                                </li>
+                                            );
+                                            //console.log('---->', el.name)
+                                        }
+                                        )
                                 }
                             </ul>
                         </div>
