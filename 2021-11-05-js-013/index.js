@@ -2,13 +2,16 @@
 
 
 class Human {
-  constructio(c_name, c_age){
+  constructor(c_name, c_age){
     this.name = c_name;
     this.age = c_age;
+
+    
   }
-  static getType = ()=>console.log("Человек");
-  getName = ()=>console.log(this.name);
-  getName = ()=>console.log(this.age);
+  getName = ()=>{console.log(this.name);};
+  getAge = ()=>{console.log(this.age);};
+  static getType = ()=>{console.log("Человек");};
+  
 }
 
 class Programmer extends Human{
@@ -17,7 +20,7 @@ class Programmer extends Human{
     this.job = "Programmer";
 
   }
-  static getJob = (object)=>console.log(object.job);
+  static getJob = (object)=>{console.log(object.job);};
 }
 
 class Tester  extends Human{
@@ -26,7 +29,7 @@ class Tester  extends Human{
     this.job = "Tester";
 
   }
-  static getJob = ()=>console.log("Tester");
+  static getJob = ()=>{console.log("Tester");};
 }
 
 class ITCompany {
@@ -52,9 +55,10 @@ const tester = Company.create("Kolia",18,"Tester");
 console.log(Programmer.getJob(programmer));
 console.log(Tester.getJob());
 console.log(Tester.getType());
+console.log(tester.getName());
+console.log(tester.getAge());
 console.log(programmer);
 console.log(tester);
-
 
 const lock_volwels = (obj)=>{
   const vowels = ['a','e','i','o','u'];

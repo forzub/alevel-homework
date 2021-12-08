@@ -4,6 +4,9 @@
 .holder>ul>li:last-child>a{color:indigo;}
 ul+p{font-size: 26px;}
 
+.list>li:last-child a{background-color: green;}
+
+
 .section3 h3:first-child{color:pink;}
 .section3 #greycol{color:grey;}
 .section3 .section-wrp div>p{color:red;}
@@ -23,6 +26,6 @@ ul+p{font-size: 26px;}
   url(img/pole-zelen-trava-dom-derevya.jpg)  ;
   background-position: bottom left,top, right, left, center;
   background-repeat:  repeat-x,repeat-x,repeat-y,repeat-y,no-repeat;
-  background-size: 22%,3%,3%,3%,50%;
+  background-size: 22%,5%,5%,5%,50%;
   background-color: green;
 }
