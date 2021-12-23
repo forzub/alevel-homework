@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.wrp1024{max-width: 1024px; margin: 0 auto;}
+
+.ri_wrp, .aform-wrp, .mf_wrp{max-width: 1024px; margin: 0 auto;}
+
+.ri_sect{padding: 30px 0; background: #ccc;}
+.ri-range-bx{margin-bottom: 15px;}
+
+.aform-sect{padding: 30px 0; background: #aaa;}
+.aform{padding: 25px;border: 1px solid #888; border-radius: 10px;width: 500px;margin: 0 auto;margin-bottom: 20px;}
+.aform-in-bx{margin-bottom: 20px;}
+.aform-label{display: block;width: 300px;margin: 0 auto;}
+.aform-btn-bx{margin-bottom: 20px;}
+
+.mf_sect{padding: 25px 0;}
+
+.mf_service_bx{margin-bottom: 25px;display: flex; justify-content: space-between;}
+.mf_search_bx{width: 100%; max-width: 400px;box-sizing: border-box;}
+.mf_search_bx input{outline: none; border-color: #ccc; padding: 5px 15px 5px 15px;font-size: 16px; width: 100%; max-width: 400px;}
+.service_btn + .service_btn{margin-left: 25px;}
+
+
+.mf_list{list-style: none; width: 100%; margin: 0 auto;padding: 0;}
+.mf_list>li{display: flex;justify-content: space-between;border-bottom: 1px solid #ccc;}
+.mf_list>li:first-child{border-bottom: 3px solid #ccc;}
+.show_item{flex:0 0 25%; text-align: center;padding: 5px 0;text-align: left;}
+.show_item:first-child{text-align: left;}
